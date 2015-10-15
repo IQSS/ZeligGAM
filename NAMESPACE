@@ -1,0 +1,8 @@
+import(Zelig, mgcv)
+
+exportPattern("^[[:alpha:]]+")
+exportClasses(
+     "Zelig-gam"
+)
+
+importFrom(methods, setRefClass)
