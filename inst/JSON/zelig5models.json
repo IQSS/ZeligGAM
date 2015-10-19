@@ -1,5 +1,5 @@
 {
-  "zelig5gammodels": {
+  "zelig5models": {
     "normalgam": {
       "name": ["normal-gam"],
       "description": ["Generalized Additive Model for Normal Regression of Continuous Dependent Variables"],
