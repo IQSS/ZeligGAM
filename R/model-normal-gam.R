@@ -1,14 +1,15 @@
 znormalgam <- setRefClass("Zelig-normal-gam",
-                          contains = "Zelig")
+                          contains = "Zelig-gam")
 
 
 znormalgam$methods(
   initialize = function() {
     callSuper()
-    .self$name <- "normal.gam"
-    # .self$fn <- zlavaan
+    .self$name <- "normal-gam"
+    .self$family <- "gaussian"
+    .self$fn <- mgcv::gam
     .self$description <- "Generalized Additive Model for Normal Regression of Continuous Dependent Variables"
-    # .self$year <- 2015
+    .self$year <- 2011
     .self$category <- "continuous"
     .self$wrapper <- "normal.gam"
   }

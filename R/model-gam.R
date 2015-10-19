@@ -1,12 +1,14 @@
 zgam <- setRefClass("Zelig-gam",
-                        contains = "Zelig")
+                    contains = "Zelig",
+                    fields = list(family = "character",
+                                  link = "character",
+                                  linkinv = "function"))
 
 
 zgam$methods(
   initialize = function() {
     callSuper()
     .self$name <- "gam"
-    # .self$fn <- zlavaan
     .self$authors <- "Skyler J. Cranmer"
     # .self$description <- "Structural Equation Model"
     .self$year <- 2011

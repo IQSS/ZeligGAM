@@ -1,17 +1,17 @@
 {
-  "zelig5semmodels": {
-    "gam": {
-      "name": ["gam"],
-      "description": [],
+  "zelig5gammodels": {
+    "normal.gam": {
+      "name": ["normal-gam"],
+      "description": ["Generalized Additive Model for Normal Regression of Continuous Dependent Variables"],
       "outcome": {
         "modelingType": [""]
       },
       "explanatory": {
         "modelingType": ["continuous", "discrete", "nominal", "ordinal", "binary"]
       },
-      "vignette.url": ["http://docs.zeligproject.org/en/latest/zelig-gam.html"],
-      "wrapper": ["wrapper"],
-      "tree": ["Zelig-gam"]
+      "vignette.url": ["http://docs.zeligproject.org/en/latest/zelig-normal-gam.html"],
+      "wrapper": ["normal.gam"],
+      "tree": ["Zelig-normal-gam", "Zelig-gam"]
     }
   }
 }
