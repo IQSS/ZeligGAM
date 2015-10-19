@@ -15,4 +15,9 @@ z.out <- zelig(y~s(x0)+s(x1)+s(x2)+s(x3), model="normal.gam", data=my.data)
 z5 <- znormalgam$new()
 z5$zelig(y~s(x0)+s(x1)+s(x2)+s(x3), data=my.data)
 z5
-  
+
+
+z.out <- z5$zelig.out$z.out[[1]]
+summary(z.out)
+str(z.out$smooth[[1]]$term)
+str(z.out$smooth[[1]]$df)
