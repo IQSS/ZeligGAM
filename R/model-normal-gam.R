@@ -27,6 +27,24 @@ normal.pv <- function (obj, x, inv, num) {
   rnorm(num, prfit, prse)
 }
 
+#' Simulate Parameters for the ``normal.gam'' Model
+#' This method is used internally by Zelig to simulate parameters.
+#' @note This method is used as part of the Zelig 4 API. This should not be
+#' called explicitly.
+#' @usage \method{param}{normal.gam}(obj, num=1000, ...)
+#' @S3method param normal.gam
+#' @param obj a zelig object
+#' @param num an integer specifying the number of simulations to compute
+#' @param ... additional parameters
+#' @return a list specifying link, link-inverse, random samples, and ancillary
+#' parameters
+# param.normal.gam <- function(obj, num = 1000, ...) {
+#   coef <- mvrnorm(num, mu = coef(.fitted), Sigma = vcov(.fitted))
+#   
+#   list(simulations = coef,
+#        family = gaussian())
+# }
+
 #' Compute Quantities of Interest for the Zelig Model ``normal.gam''
 #' @usage \method{qi}{normal.gam}(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL)
 #' @S3method qi normal.gam
@@ -59,6 +77,7 @@ znormalgam$methods(
     callSuper()
     .self$name <- "normal-gam"
     .self$family <- "gaussian"
+    .self$linkinv <- function(x) x
     .self$fn <- mgcv::gam
     .self$description <-
       "Generalized Additive Model for Normal Regression of Continuous Dependent Variables"
@@ -79,11 +98,11 @@ znormalgam$methods(
   }
 )
 
-znormalgam$methods(
-  set = function(z.out) {
-    return()
-  }
-)
+# znormalgam$methods(
+#   set = function(z.out) {
+#     return()
+#   }
+# )
 
 znormalgam$methods(
   param = function(z.out) {
@@ -93,8 +112,9 @@ znormalgam$methods(
 
 znormalgam$methods(
   qi = function(simparam, mm) {
-    ev <- simparam %*% t(mm)
-    pv <- ev
-    return(list(ev = ev, pv = pv))
+    # ev <- simparam %*% t(mm)
+    # ev <- compute.ev(z.out, z5$setx.out$x, inv = z5$linkinv, num = 100)
+    # pv <- ev
+    return(list(ev = 1))
   }
 )

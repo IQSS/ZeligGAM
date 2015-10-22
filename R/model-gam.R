@@ -2,7 +2,8 @@ zgam <- setRefClass("Zelig-gam",
                     contains = "Zelig",
                     fields = list(family = "character",
                                   link = "character",
-                                  linkinv = "function"))
+                                  linkinv = "function",
+                                  object = "ANY"))
 
 
 zgam$methods(
@@ -23,14 +24,25 @@ zgam$methods(
     .self$model.call <- .self$zelig.call
     callSuper(formula = formula, data = data, ...,
               weights = NULL, by = by)
+    .self$object <- .self$zelig.out$z.out[[1]]
   }
 )
 
 zgam$methods(
-  set = function(z.out) {
-    return()
+  set = function(...) {
+    "Setting Explanatory Variable Values"
+    s <-list(...)
+    f <- update(.self$formula, 1 ~ .)
+    # update <- na.omit(.self$data) %>% # remove missing values
+    update <- .self$data %>%
+      group_by_(.self$by) %>%
+      do(mm = model.matrix.gam(.self$object, reduce.gam(dataset = ., s, 
+                                                        formula = .self$formula,
+                                                        data = .self$data)))
+    return(update)
   }
 )
+
 
 ##----- QI's need to be defined
 
