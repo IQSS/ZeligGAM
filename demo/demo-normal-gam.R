@@ -38,7 +38,7 @@ z5$zelig(y~s(x0)+s(x1)+s(x2)+s(x3), data=my.data)
 z5$setx()
 z5$setx(x3 = 0)
 z5
-z5$setx.out$x$mm
+z5$setx.out$x$mm[[1]]
 
 z5$simparam()
 
