@@ -1,4 +1,4 @@
-zpoissongam <- setRefClass("Zelig-normal-gam", contains = "Zelig-gam")
+zpoissongam <- setRefClass("Zelig-poisson-gam", contains = "Zelig-gam")
 
 zpoissongam$methods(
   initialize = function() {
@@ -8,7 +8,7 @@ zpoissongam$methods(
     .self$linkinv <- poisson("log")$linkinv
     .self$fn <- mgcv::gam
     .self$description <-
-      "Generalized Additive Model for poisson Regression of Discrete Dependent Variables"
+      "Generalized Additive Model for Poisson Regression of Discrete Dependent Variables"
     .self$year <- 2011
     .self$category <- "discrete"
     .self$wrapper <- "poisson.gam"

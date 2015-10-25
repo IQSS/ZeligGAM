@@ -15,8 +15,9 @@ Suggests:
     knitr
 Collate:
     'model-gam.R'
-    'model-logit-gam.R'
     'model-normal-gam.R'
+    'model-binchoice-gam.R'
+    'model-logit-gam.R'
     'model-probit-gam.R'
     'model-poisson-gam.R'
     'model-hetnormal-gam.R'

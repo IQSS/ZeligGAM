@@ -1,16 +1,13 @@
 zlogitgam <- setRefClass("Zelig-logit-gam",
-                        contains = "Zelig")
-
+                        contains = "Zelig-binchoice-gam")
 
 zlogitgam$methods(
   initialize = function() {
     callSuper()
     .self$name <- "logit.gam"
-    # .self$fn <- zlavaan
-    # .self$authors <- "Christine Choirat"
-    # .self$description <- "Structural Equation Model"
-    # .self$year <- 2015
-    .self$category <- "continuous"
+    .self$family <- "binomial"
+    .self$linkinv <- binomial("logit")$linkinv
+    .self$category <- "discrete"
     .self$wrapper <- "logit.gam"
   }
 )
@@ -23,26 +20,3 @@ zlogitgam$methods(
               weights = NULL, by = by)
   }
 )
-
-zlogitgam$methods(
-  set = function(z.out) {
-    return()
-  }
-)
-
-##----- QI's need to be defined
-
-zlogitgam$methods(
-  param = function(z.out) {
-    return(mvrnorm(.self$num, coef(z.out), vcov(z.out)))
-  }
-)
-
-zlogitgam$methods(
-  qi = function(simparam, mm) {
-    ev <- simparam %*% t(mm)
-    pv <- ev
-    return(list(ev = ev, pv = pv))
-  }
-)
-
