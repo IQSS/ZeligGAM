@@ -31,31 +31,15 @@ zgam$methods(
 zgam$methods(
   set = function(...) {
     "Setting Explanatory Variable Values"
-    s <-list(...)
-    # f <- update(.self$formula, 1 ~ .)
+    s <- list(...)
+    f1 <- mgcv::interpret.gam(formula(.self$object))$fake.formula
+    f2 <- update(f1, 1 ~ .)
     # update <- na.omit(.self$data) %>% # remove missing values
     update <- .self$data %>%
       group_by_(.self$by) %>%
-      do(mm = model.matrix.gam(.self$object, reduce.gam(dataset = ., s, 
-                                                        formula = .self$formula,
-                                                        data = .self$data)))
+      do(mm = model.matrix(f2, reduce(dataset = ., s, 
+                                     formula = f1,
+                                     data = .self$data)))
     return(update)
   }
 )
-
-##----- QI's need to be defined
-
-zgam$methods(
-  param = function(z.out) {
-    return(mvrnorm(.self$num, coef(z.out), vcov(z.out)))
-  }
-)
-
-zgam$methods(
-  qi = function(simparam, mm) {
-    ev <- simparam %*% t(mm)
-    pv <- ev
-    return(list(ev = ev, pv = pv))
-  }
-)
-

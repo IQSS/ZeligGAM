@@ -98,23 +98,19 @@ znormalgam$methods(
   }
 )
 
-# znormalgam$methods(
-#   set = function(z.out) {
-#     return()
-#   }
-# )
-
 znormalgam$methods(
-  param = function(z.out) {
-    return(mvrnorm(.self$num, coef(z.out), vcov(z.out)))
+  param = function(z.out, x.out) {
+    return(list(simparam = z.out))
   }
 )
 
 znormalgam$methods(
   qi = function(simparam, mm) {
-    # ev <- simparam %*% t(mm)
-    # ev <- compute.ev(z.out, z5$setx.out$x, inv = z5$linkinv, num = 100)
-    # pv <- ev
-    return(list(ev = 1))
+    x.out <- data.frame(mm)
+    predictions <- mgcv::predict.gam(simparam$simparam, x.out, se.fit = TRUE, type = "link")
+    ev <- rnorm(.self$num, .self$linkinv(predictions$fit), predictions$se.fit)
+    predictions <- mgcv::predict.gam(simparam$simparam, x.out, se.fit = TRUE, type = "response")
+    pv <- rnorm(.self$num, predictions$fit, predictions$se.fit)
+    return(list(ev = as.matrix(ev), pv = as.matrix(pv)))
   }
 )
