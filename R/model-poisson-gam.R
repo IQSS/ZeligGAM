@@ -5,7 +5,7 @@ zpoissongam$methods(
     callSuper()
     .self$name <- "poisson-gam"
     .self$family <- "poisson"
-    .self$linkinv <- function(x) x
+    .self$linkinv <- poisson("log")$linkinv
     .self$fn <- mgcv::gam
     .self$description <-
       "Generalized Additive Model for poisson Regression of Discrete Dependent Variables"

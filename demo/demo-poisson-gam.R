@@ -23,9 +23,7 @@ my.data <- as.data.frame(cbind(y, x0, x1, x2, x3))
 
 z5 <- zpoissongam$new()
 z5$zelig(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = my.data)
-
 z5
-
 z5$setx(x3 = quantile(my.data$x3, 0.2))
 z5$setx1(x3 = quantile(my.data$x3, 0.8))
 z5
