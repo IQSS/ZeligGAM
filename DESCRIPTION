@@ -21,4 +21,3 @@ Collate:
     'model-poisson-gam.R'
     'model-hetnormal-gam.R'
     'create-json.R'
-    'utils.R'

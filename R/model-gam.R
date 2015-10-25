@@ -5,16 +5,14 @@ zgam <- setRefClass("Zelig-gam",
                                   linkinv = "function",
                                   object = "ANY"))
 
-
 zgam$methods(
   initialize = function() {
     callSuper()
     .self$name <- "gam"
     .self$authors <- "Skyler J. Cranmer"
-    # .self$description <- "Structural Equation Model"
+    .self$description <- "Generalized Additive Model Class"
     .self$year <- 2011
     .self$category <- "continuous"
-    # .self$wrapper <- "gam"
   }
 )
 
