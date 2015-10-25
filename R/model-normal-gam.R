@@ -26,11 +26,6 @@ znormalgam$methods(
   }
 )
 
-znormalgam$methods(
-  param = function(z.out, x.out) {
-    return(list(simparam = z.out))
-  }
-)
 
 znormalgam$methods(
   qi = function(simparam, mm) {

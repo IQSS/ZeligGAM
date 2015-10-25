@@ -41,3 +41,9 @@ zgam$methods(
     return(update)
   }
 )
+
+zgam$methods(
+  param = function(z.out, x.out) {
+    return(list(simparam = z.out))
+  }
+)
