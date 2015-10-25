@@ -32,7 +32,7 @@ zgam$methods(
   set = function(...) {
     "Setting Explanatory Variable Values"
     s <-list(...)
-    f <- update(.self$formula, 1 ~ .)
+    # f <- update(.self$formula, 1 ~ .)
     # update <- na.omit(.self$data) %>% # remove missing values
     update <- .self$data %>%
       group_by_(.self$by) %>%
@@ -42,7 +42,6 @@ zgam$methods(
     return(update)
   }
 )
-
 
 ##----- QI's need to be defined
 

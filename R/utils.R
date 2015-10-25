@@ -41,11 +41,9 @@ reduce.gam <- function(dataset, s, formula, data) {
 #' @return a correctly formatted data.frame
 #' @author Matt Owen
 
-repeat.data <- function (z.out) {
-  if (is.null(z.out))
-    return(NULL)
-  object <- z.out
-  data <- object$setx.out$x$mm[[1]]
+repeat.data <- function(z5) {
+  object <- z5$zelig.out$z.out[[1]]
+  data <- data.frame(z5$setx.out$x$mm[[1]])
   pterms <- attr(object$pterms, 'term.labels')
   sterms <- list()
   df.vec <- vector()
