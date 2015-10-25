@@ -26,7 +26,6 @@ znormalgam$methods(
   }
 )
 
-
 znormalgam$methods(
   qi = function(simparam, mm) {
     x.out <- data.frame(mm)
