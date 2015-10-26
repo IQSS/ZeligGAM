@@ -33,6 +33,7 @@ zpoissongam$methods(
     ev <- rnorm(.self$num, .self$linkinv(pred.link$fit), pred.link$se.fit)
     pred.response <- mgcv::predict.gam(simparam$simparam, x.out, se.fit = TRUE, type = "response")
     pv <- rpois(.self$num, pred.response$fit)
-    return(list(ev = as.matrix(ev), pv = as.matrix(pv)))
+    levels(pv) <- min(pv):max(pv)
+    return(list(ev = as.matrix(ev), pv = pv))
   }
 )
