@@ -6,7 +6,19 @@ library(jsonlite)
 z5normalgam <- znormalgam$new()
 z5normalgam$toJSON()
 
-zeligmodels <- list(zelig5models = list("normalgam" = z5normalgam$ljson))
+z5logitgam <- zlogitgam$new()
+z5logitgam$toJSON()
+
+z5probitgam <- zprobitgam$new()
+z5probitgam$toJSON()
+
+z5poissongam <- zpoissongam$new()
+z5poissongam$toJSON()
+
+zeligmodels <- list(zelig5models = list("normalgam" = z5normalgam$ljson,
+                                        "logitgam" = z5logitgam$ljson,
+                                        "probitgam" = z5probitgam$ljson,
+                                        "poissongam" = z5poissongam$ljson))
 
 # cat(toJSON(zeligmodels, pretty = TRUE), file = file.path("tools", "zelig5models.json"))
 # file.copy(from = file.path("tools", "zelig5models.json"), to = file.path("inst", "JSON", "zelig5models.json"))
