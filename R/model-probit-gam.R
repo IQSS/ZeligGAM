@@ -5,7 +5,7 @@ zprobitgam$methods(
   initialize = function() {
     callSuper()
     .self$name <- "probit.gam"
-    .self$family <- "binomial"
+    .self$family <- "binomial('probit')"
     .self$linkinv <- binomial("probit")$linkinv
     .self$category <- "discrete"
     .self$wrapper <- "probit.gam"

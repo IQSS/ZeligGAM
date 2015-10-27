@@ -16,6 +16,7 @@ zlogitgam$methods(
   zelig = function(formula, data, ..., weights = NULL, by = NULL) {
     .self$zelig.call <- match.call(expand.dots = TRUE)
     .self$model.call <- .self$zelig.call
+    # .self$model.call$family <- .self$family
     callSuper(formula = formula, data = data, ...,
               weights = NULL, by = by)
   }

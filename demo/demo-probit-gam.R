@@ -29,6 +29,7 @@ z5 <- zprobitgam$new()
 z5
 z5$zelig(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = my.data)
 z5
+z5$model.call
 z5$setx(x3 = quantile(my.data$x3, 0.2))
 z5$setx1(x3 = quantile(my.data$x3, 0.8))
 z5
@@ -37,3 +38,5 @@ z5$sim.out$x$ev
 z5$sim.out$x$pv
 z5
 plot(z5)
+
+gam(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = my.data, family = binomial("probit"))

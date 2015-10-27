@@ -1,6 +1,6 @@
 zgam <- setRefClass("Zelig-gam",
                     contains = "Zelig",
-                    fields = list(family = "character",
+                    fields = list(family = "ANY",
                                   link = "character",
                                   linkinv = "function",
                                   object = "ANY"))
@@ -40,9 +40,6 @@ zgam$methods(
       do(mm = reduce(dataset = ., s, 
                      formula = f1,
                      data = .self$data))
-#       do(mm = model.matrix(f2, reduce(dataset = ., s, 
-#                                      formula = f1,
-#                                      data = .self$data)))
     return(update)
   }
 )
