@@ -13,6 +13,7 @@ zgam$methods(
     .self$description <- "Generalized Additive Model Class"
     .self$year <- 2011
     .self$category <- "continuous"
+    .self$acceptweights <- TRUE
   }
 )
 
@@ -36,9 +37,12 @@ zgam$methods(
     # update <- na.omit(.self$data) %>% # remove missing values
     update <- .self$data %>%
       group_by_(.self$by) %>%
-      do(mm = model.matrix(f2, reduce(dataset = ., s, 
-                                     formula = f1,
-                                     data = .self$data)))
+      do(mm = reduce(dataset = ., s, 
+                     formula = f1,
+                     data = .self$data))
+#       do(mm = model.matrix(f2, reduce(dataset = ., s, 
+#                                      formula = f1,
+#                                      data = .self$data)))
     return(update)
   }
 )

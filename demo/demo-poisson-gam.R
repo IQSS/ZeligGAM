@@ -26,8 +26,8 @@ z5$zelig(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = my.data)
 z5
 z5$setx(x3 = quantile(my.data$x3, 0.2))
 z5$setx1(x3 = quantile(my.data$x3, 0.8))
-z5
-z5$sim(100)
+z5$setx.out$x$mm
+z5$sim(1000)
 z5$sim.out$x$ev
 z5$sim.out$x$pv
 z5
