@@ -9,11 +9,14 @@ zgam$methods(
   initialize = function() {
     callSuper()
     .self$name <- "gam"
+    .self$fn <- quote(mgcv::gam)
     .self$authors <- "Skyler J. Cranmer"
     .self$description <- "Generalized Additive Model Class"
     .self$year <- 2011
     .self$category <- "continuous"
     .self$acceptweights <- TRUE
+    .self$test.statistics <- list()
+    .self$test.statistics$gim.criteria <- NULL
   }
 )
 

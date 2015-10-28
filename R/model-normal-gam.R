@@ -6,7 +6,6 @@ znormalgam$methods(
     .self$name <- "normal-gam"
     .self$family <- "gaussian"
     .self$linkinv <- function(x) x
-    .self$fn <- mgcv::gam
     .self$description <-
       "Generalized Additive Model for Normal Regression of Continuous Dependent Variables"
     .self$year <- 2011

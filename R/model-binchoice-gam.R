@@ -4,7 +4,6 @@ zbinchoicegam$methods(
   initialize = function() {
     callSuper()
     .self$name <- "binchoice-gam"
-    .self$fn <- mgcv::gam
     .self$year <- 2011
     .self$category <- "discrete"
   }
