@@ -1,4 +1,4 @@
-import(Zelig, mgcv)
+import(Zelig, mgcv, dplyr)
 
 exportPattern("^[[:alpha:]]+")
 exportClasses(

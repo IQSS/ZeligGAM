@@ -18,7 +18,7 @@ f <- f0(x0) + f1(x1) + f2(x2)
 g <- (f - 5) / 3
 g <- binomial()$linkinv(g)
 
-y <- rbinom(g,1,g)
+y <- rbinom(g, 1, g)
 
 my.data <- as.data.frame(cbind(y, x0, x1, x2, x3))
 
@@ -40,3 +40,6 @@ z5
 plot(z5)
 
 gam(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = my.data, family = binomial("probit"))
+
+z.out <- zelig(y ~ s(x0) + s(x1) + s(x2) + s(x3), model = "probit.gam", data = my.data)
+summary(z.out)

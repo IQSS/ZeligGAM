@@ -9,7 +9,8 @@ Description: More about what it does (maybe more than one line)
 License: GPL (>=2)
 Depends:
     Zelig,
-    mgcv
+    mgcv,
+    dplyr
 Suggests:
     testthat,
     knitr
