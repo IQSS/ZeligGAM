@@ -9,7 +9,7 @@
       "explanatory": {
         "modelingType": ["continuous", "discrete", "nominal", "ordinal", "binary"]
       },
-      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-normal-gam.html"],
+      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-normalgam.html"],
       "wrapper": ["normal.gam"],
       "tree": ["Zelig-normal-gam", "Zelig-gam"]
     },
@@ -22,7 +22,7 @@
       "explanatory": {
         "modelingType": ["continuous", "discrete", "nominal", "ordinal", "binary"]
       },
-      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-logit-gam.html"],
+      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-logitgam.html"],
       "wrapper": ["logit.gam"],
       "tree": ["Zelig-logit-gam", "Zelig-binchoice-gam", "Zelig-gam"]
     },
@@ -35,7 +35,7 @@
       "explanatory": {
         "modelingType": ["continuous", "discrete", "nominal", "ordinal", "binary"]
       },
-      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-probit-gam.html"],
+      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-probitgam.html"],
       "wrapper": ["probit.gam"],
       "tree": ["Zelig-probit-gam", "Zelig-binchoice-gam", "Zelig-gam"]
     },
@@ -48,7 +48,7 @@
       "explanatory": {
         "modelingType": ["continuous", "discrete", "nominal", "ordinal", "binary"]
       },
-      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-poisson-gam.html"],
+      "vignette.url": ["http://docs.zeligproject.org/en/latest/zeliggam-poissongam.html"],
       "wrapper": ["poisson.gam"],
       "tree": ["Zelig-poisson-gam", "Zelig-gam"]
     }
