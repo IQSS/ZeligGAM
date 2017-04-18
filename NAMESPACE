@@ -1,8 +1,9 @@
-import(Zelig, mgcv, dplyr)
+import(Zelig, mgcv, dplyr, Formula)
 
 exportPattern("^[[:alpha:]]+")
 exportClasses(
      "Zelig-gam"
 )
 
-importFrom(methods, setRefClass)
+importFrom("methods", "setRefClass")
+importFrom("methods", "new")

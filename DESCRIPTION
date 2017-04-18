@@ -1,16 +1,18 @@
 Package: ZeligGAM
 Type: Package
 Title: What the package does (short line)
-Version: 0.1
-Date: 2015-10-15
+Version: 0.1.1
+Date: 2017-04-18
 Author: Who wrote it
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: GPL (>=2)
 Depends:
-    Zelig,
+    dplyr,
+    Formula,
+    methods,
     mgcv,
-    dplyr
+    Zelig (>= 5.1-0),
 Suggests:
     testthat,
     knitr
