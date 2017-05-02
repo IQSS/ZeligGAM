@@ -1,18 +1,20 @@
 Package: ZeligGAM
 Type: Package
-Title: What the package does (short line)
+Title: Zelig for Generalized Additive Models
 Version: 0.1.1
-Date: 2017-04-18
+Date: 2017-05-02
 Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: GPL (>=2)
+Maintainer: <zelig.zee@gmail.com>
+Description: Provides generalized additive models via the Zelig interface.
+    This includes normal, binonial choice, logistic, and probit regression
+    models, among others.
+License: GPL (>=3)
 Depends:
     dplyr,
     Formula,
     methods,
     mgcv,
-    Zelig (>= 5.1-0),
+    Zelig (>= 5.1),
 Suggests:
     testthat,
     knitr
